@@ -105,7 +105,7 @@ INSERT INTO users (name, role, email, password, avatar) VALUES
 -- Run  php -r "echo password_hash('admin123',PASSWORD_DEFAULT);"  and replace if needed.
 -- Or use the init_passwords.php helper (included in package).
 
--- Customers
+-- Insert New Customers
 INSERT INTO customers (first_name,last_name,dob,phone,email,address,nhs_number,gp_name,allergies,conditions,last_visit,status) VALUES
 ('Ahmed','Perera','1987-03-12','0765-123-456','ahmed.perera@email.com','45 Mill Lane, Stafford ST16 2AA','NHS-10234567','Dr. Sarah Williams','None','Hypertension','2026-04-12','Active'),
 ('Nimal','Silva','1982-07-05','0772-987-654','nimal.silva@email.com','12 Castle Street, Stafford ST17 4BQ','NHS-20345678','Dr. James Patel','Penicillin','Type 2 Diabetes','2026-04-10','Active'),
@@ -120,7 +120,7 @@ INSERT INTO customers (first_name,last_name,dob,phone,email,address,nhs_number,g
 ('Julia','Cole','1988-05-21','0733-223-344','julia.c@email.com','88 Birch Way, Tamworth B77 2RQ','NHS-11234567','Dr. Mark Thompson','Penicillin','Respiratory Infection','2026-04-14','Alert'),
 ('Michael','Hartley','1950-08-11','0766-445-667','m.hartley@email.com','2 Oak Lane, Stafford ST17 9PQ','NHS-21345678','Dr. Sarah Williams','None','Parkinson''s Disease','2026-03-28','Active');
 
--- Medicines
+-- Insrt New Medicines
 INSERT INTO medicines (name,category,qty,unit,expiry,supplier,id_check,price) VALUES
 ('Paracetamol','Analgesic',10,'tablets','2027-06-30','PharmaCo Ltd',0,2.50),
 ('Ibuprofen','Analgesic',2,'tablets','2027-03-15','MedSupply UK',0,3.20),
@@ -138,7 +138,7 @@ INSERT INTO medicines (name,category,qty,unit,expiry,supplier,id_check,price) VA
 ('Prednisone','Corticosteroid',40,'tablets','2025-12-15','BioPharm Ltd',0,7.30),
 ('Loratadine','Antihistamine',90,'tablets','2027-07-25','PharmaCo Ltd',0,3.60);
 
--- Prescriptions
+-- Insert New Prescriptions
 INSERT INTO prescriptions (id,cust_id,med_id,qty,unit,rx_date,prescriber,status,notes) VALUES
 ('P-1007',6,2,4,'tablets','2026-04-14','Dr. James Patel','Completed','Take twice daily with food'),
 ('P-1006',7,1,20,'tablets','2026-04-12','Dr. Mark Thompson','Pending','As needed for pain'),
@@ -155,7 +155,7 @@ INSERT INTO prescriptions (id,cust_id,med_id,qty,unit,rx_date,prescriber,status,
 ('P-0995',6,7,14,'tablets','2026-04-05','Dr. James Patel','Completed',''),
 ('P-0994',7,13,28,'tablets','2026-04-01','Dr. Mark Thompson','Completed','');
 
--- Risks
+-- Insert new Risks
 INSERT INTO risks (id,type,level,cust_id,med_id,rx_id,description,risk_date,resolved) VALUES
 ('R-001','ID Check','red',8,4,'P-1005','Diazepam requires mandatory ID verification for date of birth check.','2026-04-11',0),
 ('R-002','Low Stock','amber',NULL,2,NULL,'Ibuprofen stock critically low — only 2 tablets remaining. Reorder immediately.','2026-04-12',0),
